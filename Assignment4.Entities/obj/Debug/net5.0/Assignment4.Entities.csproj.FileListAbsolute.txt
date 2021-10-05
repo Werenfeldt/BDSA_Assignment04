@@ -1,0 +1,15 @@
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/Assignment4.Entities.deps.json
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/Assignment4.Entities.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/ref/Assignment4.Entities.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/Assignment4.Entities.pdb
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/Assignment4.Core.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/bin/Debug/net5.0/Assignment4.Core.pdb
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.csproj.AssemblyReference.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.AssemblyInfoInputs.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.AssemblyInfo.cs
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.csproj.CoreCompileInputs.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.csproj.CopyComplete
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/ref/Assignment4.Entities.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Entities/obj/Debug/net5.0/Assignment4.Entities.pdb

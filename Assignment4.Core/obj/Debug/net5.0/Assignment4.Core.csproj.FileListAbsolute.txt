@@ -1,0 +1,12 @@
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/bin/Debug/net5.0/Assignment4.Core.deps.json
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/bin/Debug/net5.0/Assignment4.Core.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/bin/Debug/net5.0/ref/Assignment4.Core.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/bin/Debug/net5.0/Assignment4.Core.pdb
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.csproj.AssemblyReference.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.AssemblyInfoInputs.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.AssemblyInfo.cs
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.csproj.CoreCompileInputs.cache
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/ref/Assignment4.Core.dll
+/Users/Josefine/3.semester/BDSA/BDSA_Assignment04/BDSA_Assignment04/Assignment4.Core/obj/Debug/net5.0/Assignment4.Core.pdb
