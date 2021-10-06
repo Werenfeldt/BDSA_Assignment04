@@ -1,41 +1,98 @@
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using Assignment4.Core;
+using Microsoft.Data.SqlClient;
 
 namespace Assignment4.Entities
 {
-     public class TaskRepository : ITaskRepository
+    public class TaskRepository : ITaskRepository
     {
-        public IReadOnlyCollection<TaskDTO> All()
+        private readonly KanbanContext _context;
+
+        public TaskRepository(KanbanContext context)
         {
-            return null;
+            _context = context;
         }
+        public IReadOnlyCollection<TaskDTO> All() => _context.Tasks.Select(async t => new TaskDTO(t.Id, t.Title, t.UserId, t.Description, t.TaskState)).ToList().AsReadOnly();
+
+
 
         public int Create(TaskDTO task)
         {
-            return 0;
+
+            var taskEntity = new Task
+            {
+                Id = task.Id,
+                Title = task.Title,
+                UserId = task.AssignedToId,
+                Description = task.Description,
+                TaskState = task.State
+            };
+
+            _context.Tasks.Add(taskEntity);
+
+            _context.SaveChanges();
+
+            return taskEntity.Id;
         }
 
         public void Delete(int taskId)
         {
+            var taskEntity = _context.Tasks.Find(taskId);
+
+            _context.Tasks.Remove(taskEntity);
+            _context.SaveChanges();
         }
 
         public TaskDetailsDTO FindById(int id)
         {
-            return null;
+            var tasks = from t in _context.Tasks
+                        where t.Id == id
+                        select new TaskDetailsDTO(
+                            t.Id,
+                            t.Title,
+                            t.Description,
+                            t.UserId,
+                            t.User.Name,
+                            t.User.Email,
+                            GetTags(t.Tags.Select(t => t.Name).ToString()).ToList(),
+                            t.TaskState
+                        //c.Powers.Select(c => c.Name).ToHashSet()
+                        );
+
+            return tasks.FirstOrDefault();
         }
+
+
 
         public void Update(TaskDTO task)
         {
-            
+            var taskEntity = _context.Tasks.Find(task.Id);
+
+            taskEntity.Id = task.Id;
+            taskEntity.Title = task.Title;
+            taskEntity.UserId = task.AssignedToId;
+            taskEntity.Description = task.Description;
+            taskEntity.TaskState = task.State;
+
+
+            _context.SaveChanges();
         }
 
-        public void Dispose()
-        {
-        }
+        private Tag GetTag(string name) => _context.Tags.FirstOrDefault(c => c.Name == name) ?? new Tag { Name = name };
 
-        IReadOnlyCollection<TaskDTO> ITaskRepository.All()
+        private IEnumerable<Tag> GetTags(IEnumerable<string> tags)
         {
-            throw new System.NotImplementedException();
+            var existing = _context.Tags.Where(t => tags.Contains(t.Name)).ToDictionary(t => t.Name);
+
+            foreach (var tag in tags)
+            {
+                yield return existing.TryGetValue(tag, out var p) ? p : new Tag { Name = tag };
+            }
         }
     }
+
+
 }

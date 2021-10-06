@@ -20,7 +20,9 @@ namespace Assignment4
 
             using var context = new KanbanContext(optionsBuilder.Options);
             
-            KanbanContextFactory.Seed(context);
+        //     KanbanContextFactory.Seed(context);
+
+            var try = new TaskRepository(configuration);
         }
         static IConfiguration LoadConfiguration()
         {
