@@ -38,12 +38,22 @@ namespace Assignment4.Entities
             return taskEntity.Id;
         }
 
+        public (Response Response, int TaskId) Create(TaskCreateDTO task)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(int taskId)
         {
             var taskEntity = _context.Tasks.Find(taskId);
 
             _context.Tasks.Remove(taskEntity);
             _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
 
         public TaskDetailsDTO FindById(int id)
@@ -54,18 +64,46 @@ namespace Assignment4.Entities
                             t.Id,
                             t.Title,
                             t.Description,
-                            t.UserId,
-                            t.User.Name,
-                            t.User.Email,
-                            GetTags(t.Tags.Select(t => t.Name).ToString()).ToList(),
-                            t.TaskState
+                            // t.UserId,
+                            // t.User.Name,
+                            // t.User.Email,
+                            // GetTags(t.Tags.Select(t => t.Name).ToString()).ToList(),
+                            // t.TaskState
                         //c.Powers.Select(c => c.Name).ToHashSet()
                         );
 
             return tasks.FirstOrDefault();
         }
 
+        public TaskDetailsDTO Read(int taskId)
+        {
+            throw new NotImplementedException();
+        }
 
+        public IReadOnlyCollection<TaskDTO> ReadAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IReadOnlyCollection<TaskDTO> ReadAllByState(State state)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IReadOnlyCollection<TaskDTO> ReadAllByTag(string tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IReadOnlyCollection<TaskDTO> ReadAllByUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IReadOnlyCollection<TaskDTO> ReadAllRemoved()
+        {
+            throw new NotImplementedException();
+        }
 
         public void Update(TaskDTO task)
         {
@@ -79,6 +117,16 @@ namespace Assignment4.Entities
 
 
             _context.SaveChanges();
+        }
+
+        public Response Update(TaskUpdateDTO task)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response ITaskRepository.Delete(int taskId)
+        {
+            throw new NotImplementedException();
         }
 
         private Tag GetTag(string name) => _context.Tags.FirstOrDefault(c => c.Name == name) ?? new Tag { Name = name };
