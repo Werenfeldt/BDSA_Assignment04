@@ -15,27 +15,26 @@ namespace Assignment4.Entities
         {
             _context = context;
         }
-        public IReadOnlyCollection<TaskDTO> All() => _context.Tasks.Select(async t => new TaskDTO(t.Id, t.Title, t.UserId, t.Description, t.TaskState)).ToList().AsReadOnly();
+        // public IReadOnlyCollection<TaskDTO> All() => _context.Tasks.Select(async t => new TaskDTO(t.Id, t.Title, t.UserId, t.Description, t.TaskState)).ToList().AsReadOnly();
 
 
 
         public int Create(TaskDTO task)
         {
+            throw new NotImplementedException();
 
-            var taskEntity = new Task
-            {
-                Id = task.Id,
-                Title = task.Title,
-                UserId = task.AssignedToId,
-                Description = task.Description,
-                TaskState = task.State
-            };
+            // var taskEntity = new Task
+            // {
+            //     Title = task.Title,
+            //     User = task.AssignedToName,
+            //     TaskState = task.State
+            // };
 
-            _context.Tasks.Add(taskEntity);
+            // _context.Tasks.Add(taskEntity);
 
-            _context.SaveChanges();
+            // _context.SaveChanges();
 
-            return taskEntity.Id;
+            // return taskEntity.Id;
         }
 
         public (Response Response, int TaskId) Create(TaskCreateDTO task)
@@ -58,21 +57,33 @@ namespace Assignment4.Entities
 
         public TaskDetailsDTO FindById(int id)
         {
-            var tasks = from t in _context.Tasks
-                        where t.Id == id
-                        select new TaskDetailsDTO(
-                            t.Id,
-                            t.Title,
-                            t.Description,
-                            // t.UserId,
-                            // t.User.Name,
-                            // t.User.Email,
-                            // GetTags(t.Tags.Select(t => t.Name).ToString()).ToList(),
-                            // t.TaskState
-                        //c.Powers.Select(c => c.Name).ToHashSet()
-                        );
+            throw new NotImplementedException();
+            
+            // var task = _context.Tasks.Find(id);
 
-            return tasks.FirstOrDefault();
+            
+
+            // // var tasks = from t in _context.Tasks
+            // //             where t.Id == id
+            // //             select new TaskDetailsDTO(
+            // //                 t.Id,
+            // //                 t.Title,
+            // //                 t.Description
+            // //                 // new DateTime.Today(),
+            // //                 // t.User.Name,
+            // //                 // t.Tags, 
+            // //                 // t.TaskState,
+
+
+            // //                 // t.UserId,
+            // //                 // t.User.Name,
+            // //                 // t.User.Email,
+            // //                 // GetTags(t.Tags.Select(t => t.Name).ToString()).ToList(),
+            // //                 // t.TaskState
+            // //             //c.Powers.Select(c => c.Name).ToHashSet()
+            // //             );
+
+            // return tasks.FirstOrDefault();
         }
 
         public TaskDetailsDTO Read(int taskId)
@@ -107,16 +118,16 @@ namespace Assignment4.Entities
 
         public void Update(TaskDTO task)
         {
-            var taskEntity = _context.Tasks.Find(task.Id);
+            // var taskEntity = _context.Tasks.Find(task.Id);
 
-            taskEntity.Id = task.Id;
-            taskEntity.Title = task.Title;
-            taskEntity.UserId = task.AssignedToId;
-            taskEntity.Description = task.Description;
-            taskEntity.TaskState = task.State;
+            // taskEntity.Id = task.Id;
+            // taskEntity.Title = task.Title;
+            // taskEntity.UserId = task.AssignedToId;
+            // taskEntity.Description = task.Description;
+            // taskEntity.TaskState = task.State;
 
 
-            _context.SaveChanges();
+            // _context.SaveChanges();
         }
 
         public Response Update(TaskUpdateDTO task)
