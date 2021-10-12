@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -97,6 +98,11 @@ namespace Assignment4.Entities
 
             
             
+        }
+
+        public static implicit operator TagRepository(TaskRepository v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

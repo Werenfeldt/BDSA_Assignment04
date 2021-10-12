@@ -33,7 +33,7 @@ namespace Assignment4.Entities.Tests
         }
 
         [Fact]
-        public void Create_Task_Return_Response_And_Tagid()
+        public void Create_Tag_Return_Response_And_Tagid()
         {
             //Arrange
             var entity = new TagCreateDTO { Name = "Much important" };
