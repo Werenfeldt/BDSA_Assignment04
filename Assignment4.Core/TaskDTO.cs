@@ -6,7 +6,7 @@ namespace Assignment4.Core
 {
     public record TaskDTO(int Id, string Title, string AssignedToName, IReadOnlyCollection<string> Tags, State State);
 
-    public record TaskDetailsDTO(int Id, string Title, string Description, DateTime Created, string AssignedToName, IReadOnlyCollection<string> Tags, State State, DateTime StateUpdated) : TaskDTO(Id, Title, AssignedToName, Tags, State);
+    public record TaskDetailsDTO(int Id, string Title, string Description, string AssignedToName, IReadOnlyCollection<string> Tags, State State) : TaskDTO(Id, Title, AssignedToName, Tags, State);
     
 
     public record TaskCreateDTO

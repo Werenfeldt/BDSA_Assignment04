@@ -78,34 +78,177 @@ namespace Assignment4.Entities
             }
             else
             {
-                return new TaskDetailsDTO(_context.Tasks.Find(taskId).Id, _context.Tasks.Find(taskId).Title, _context.Tasks.Find(taskId).Description, DateTime.Now, _context.Tasks.Find(taskId).User.Name, GetTags(_context.Tasks.Find(taskId).Tags), _context.Tasks.Find(taskId).TaskState, DateTime.Now);
+                return new TaskDetailsDTO(_context.Tasks.Find(taskId).Id, _context.Tasks.Find(taskId).Title, _context.Tasks.Find(taskId).Description, _context.Tasks.Find(taskId).User.Name, GetTags(_context.Tasks.Find(taskId).Tags), _context.Tasks.Find(taskId).TaskState);
             }
 
         }
 
         public IReadOnlyCollection<TaskDTO> ReadAll()
         {
-            return null;
+            var list = _context.Tasks;
+
+            var DTOList = new List<TaskDTO>();
+            foreach (var task in list)
+            {
+                if (task.User == null || task.Tags == null)
+                {
+                    if (task.User == null && task.Tags != null)
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, null, GetTags(task.Tags), task.TaskState));
+                    }
+                    else if (task.User != null && task.Tags == null)
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, null, task.TaskState));
+                    }
+                    else
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, null, null, task.TaskState));
+                    }
+
+                }
+                else
+                {
+                    DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, GetTags(task.Tags), task.TaskState));
+                }
+
+            }
+            return DTOList;
         }
 
         public IReadOnlyCollection<TaskDTO> ReadAllByState(State state)
         {
-            return null;
+            var list = _context.Tasks;
+
+            var DTOList = new List<TaskDTO>();
+            foreach (var task in list)
+            {
+                if (task.TaskState == state)
+                {
+                    if (task.User == null || task.Tags == null)
+                    {
+                        if (task.User == null && task.Tags != null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, GetTags(task.Tags), task.TaskState));
+                        }
+                        else if (task.User != null && task.Tags == null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, null, task.TaskState));
+                        }
+                        else
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, null, task.TaskState));
+                        }
+
+                    }
+                    else
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, GetTags(task.Tags), task.TaskState));
+                    }
+                }
+            }
+            return DTOList;
         }
 
         public IReadOnlyCollection<TaskDTO> ReadAllByTag(string tag)
         {
-            return null;
+            var list = _context.Tasks;
+
+            var DTOList = new List<TaskDTO>();
+            foreach (var task in list)
+            {
+                if (GetTags(task.Tags).Contains(tag))
+                {
+                    if (task.User == null || task.Tags == null)
+                    {
+                        if (task.User == null && task.Tags != null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, GetTags(task.Tags), task.TaskState));
+                        }
+                        else if (task.User != null && task.Tags == null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, null, task.TaskState));
+                        }
+                        else
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, null, task.TaskState));
+                        }
+
+                    }
+                    else
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, GetTags(task.Tags), task.TaskState));
+                    }
+                }
+            }
+            return DTOList;
         }
 
         public IReadOnlyCollection<TaskDTO> ReadAllByUser(int userId)
         {
-            return null;
+            var list = _context.Tasks;
+
+            var DTOList = new List<TaskDTO>();
+            foreach (var task in list)
+            {
+                if (task.UserId == userId)
+                {
+                    if (task.User == null || task.Tags == null)
+                    {
+                        if (task.User == null && task.Tags != null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, GetTags(task.Tags), task.TaskState));
+                        }
+                        else if (task.User != null && task.Tags == null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, null, task.TaskState));
+                        }
+                        else
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, null, task.TaskState));
+                        }
+
+                    }
+                    else
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, GetTags(task.Tags), task.TaskState));
+                    }
+                }
+            }
+            return DTOList;
         }
 
         public IReadOnlyCollection<TaskDTO> ReadAllRemoved()
         {
-            return null;
+            var list = _context.Tasks;
+
+            var DTOList = new List<TaskDTO>();
+            foreach (var task in list)
+            {
+                if (task.TaskState == State.Removed)
+                {
+                    if (task.User == null || task.Tags == null)
+                    {
+                        if (task.User == null && task.Tags != null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, GetTags(task.Tags), task.TaskState));
+                        }
+                        else if (task.User != null && task.Tags == null)
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, null, task.TaskState));
+                        }
+                        else
+                        {
+                            DTOList.Add(new TaskDTO(task.Id, task.Title, null, null, task.TaskState));
+                        }
+
+                    }
+                    else
+                    {
+                        DTOList.Add(new TaskDTO(task.Id, task.Title, task.User.Name, GetTags(task.Tags), task.TaskState));
+                    }
+                }
+            }
+            return DTOList;
         }
 
         public Response Update(TaskUpdateDTO task)
@@ -119,6 +262,10 @@ namespace Assignment4.Entities
             else
             {
                 updatedTask.Title = task.Title;
+                updatedTask.Description = task.Description;
+                updatedTask.Tags = GetTags(task);
+                updatedTask.TaskState = task.State;
+                updatedTask.UserId = task.AssignedToId;
 
                 return Updated;
             }
